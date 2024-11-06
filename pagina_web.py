@@ -3,7 +3,7 @@ import random
 import os        #nacho acuerdate que esto sirve para trabajar con rutas :D
 from PIL import Image #para usar imagenes perrito
 
-la_ruta_de_las_cuestiones = "tiernos"  #elegimos la ruta para los animales to lindos, to tiernos
+la_ruta_de_las_cuestiones = "tiernos"  #definimos la ruta de los animales to lindos, to tiernos
 CARPETAS = {
     "mapache": os.path.join(la_ruta_de_las_cuestiones, "mapache"),
     "zorrito": os.path.join(la_ruta_de_las_cuestiones, "zorrito"),
@@ -69,3 +69,10 @@ if not st.session_state.mostrar_seleccion:
     #para volver (no se que mas decir creo que se explica solo)
     if st.button("volver"):
         st.session_state.mostrar_seleccion = True
+
+
+
+#tutorial donde aprendi como hacer algunas cosas: https://www.youtube.com/watch?v=PbSEzmsb3mU
+#os.listdir: https://docs.python.org/3/library/os.html#os.listdir
+#random.choice: https://docs.python.org/3/library/random.html#random.choice
+#Pillow (PIL) - Image.open= https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.open   #aclaracion, todavia tengo que aprender a usar bien estas funciones porque se me olvidan como funcionan y tengo que ocupar bibliografia para acordarme como ocuparlas pero con practica me voy a ir acostumbrando
