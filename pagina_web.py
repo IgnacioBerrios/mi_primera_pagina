@@ -13,9 +13,9 @@ CARPETAS = {
 
 # Archivos de música
 CANCIONES = {
-    "Canción más tierna": "/mnt/data/cancion_mas_tierna.mp3",
-    "Canción Miku": "/mnt/data/cancion_Miku.mp3",
-    "Caramel Dancing": "/mnt/data/caramel_dancing.mp3"
+    "Canción más tierna": "cancion_mas_tierna.mp3",
+    "Canción Miku": "cancion_Miku.mp3",
+    "Caramel Dancing": "caramel_dancing.mp3"
 }
 
 # Función para obtener imagen aleatoria
