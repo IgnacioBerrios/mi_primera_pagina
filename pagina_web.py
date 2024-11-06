@@ -22,6 +22,16 @@ def obtener_imagen_aleatoria(ruta_carpeta):
 # Título
 st.title("¿Para ti, qué animal es más lindo?")
 
+# Barra lateral para escribir y enviar una respuesta
+with st.sidebar:
+    st.header("Comparte tu opinión")
+    respuesta = st.text_input("¿Cuál de estos animales te parece el más lindo y por qué?")
+    if st.button("Enviar respuesta"):
+        if respuesta:
+            st.sidebar.write("Gracias por tu respuesta!")
+        else:
+            st.sidebar.write("Por favor, escribe una respuesta.")
+
 # Variable de estado para mostrar la pantalla inicial
 if "mostrar_seleccion" not in st.session_state:
     st.session_state.mostrar_seleccion = True
