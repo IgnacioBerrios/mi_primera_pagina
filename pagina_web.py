@@ -28,7 +28,7 @@ def obtener_imagen_aleatoria(ruta_carpeta):
 st.title("Para ti qué animal es más lindo?")
 
 st.sidebar.title("Barra lateral")
-musica = st.sidebar.selectbox("Selecciona una canción:", list(CANCIONES.keys()))
+musica = st.sidebar.selectbox("Selecciona una canción:", list(canciones.keys()))
 comentario = st.sidebar.text_area("Escribe un comentario:")
 
 st.sidebar.write(f"Reproduciendo: {musica}")
@@ -60,4 +60,3 @@ if st.session_state.opcion_seleccionada:
 
     if st.button("Volver"):
         reset_opcion()
-
