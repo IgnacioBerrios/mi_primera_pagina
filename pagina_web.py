@@ -12,7 +12,7 @@ CARPETAS = {
 
 # Ubicación de las canciones
 CARPETA_CANCIONES = "Song_so_cute"
-CANCIONES = {
+canciones/ = {
     "Canción 1": os.path.join(CARPETA_CANCIONES, "cancion_Miku.mp3"),
     "Canción 2": os.path.join(CARPETA_CANCIONES, "caramel_dancing.mp3"),
     "Canción 3": os.path.join(CARPETA_CANCIONES, "cancion_mas_tierna.mp3")
