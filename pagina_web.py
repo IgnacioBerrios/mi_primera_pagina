@@ -3,7 +3,6 @@ import random
 import os
 from PIL import Image
 
-# Rutas de imágenes y canciones
 RUTA_BASE = "tiernos"
 CARPETAS = {
     "mapache": os.path.join(RUTA_BASE, "mapache"),
@@ -11,72 +10,64 @@ CARPETAS = {
     "pandita rojo": os.path.join(RUTA_BASE, "pandita rojo")
 }
 
-# Archivos de música
 CANCIONES = {
     "Canción más tierna": "cancion_mas_tierna.mp3",
     "Canción Miku": "cancion_Miku.mp3",
     "Caramel Dancing": "caramel_dancing.mp3"
 }
 
-# Función para obtener imagen aleatoria
-def obtener_imagen_aleatoria(ruta_carpeta):
+def obtener_imagen(ruta_carpeta):
     imagenes = os.listdir(ruta_carpeta)
     if imagenes:
-        imagen_aleatoria = random.choice(imagenes)
-        return Image.open(os.path.join(ruta_carpeta, imagen_aleatoria))
+        imagen = random.choice(imagenes)
+        return Image.open(os.path.join(ruta_carpeta, imagen))
     return None
 
-# Título
-st.title("¿Para ti, qué animal es más lindo?")
+st.title("Para ti, qué animal es más lindo?")
 
-# Barra lateral para escribir y enviar una respuesta
 with st.sidebar:
     st.header("Comparte tu opinión")
-    respuesta = st.text_input("¿Cuál de estos animales te parece el más lindo y por qué?")
-    if st.button("Enviar respuesta"):
+    respuesta = st.text_input("Cuál de estos animales te parece el más lindo y por qué? explayece")
+    if st.button("Enviar"):
         if respuesta:
-            st.sidebar.write("Gracias por tu respuesta!")
+            st.sidebar.write("Gracias por tu opinion ☺️☺️☺️")
         else:
-            st.sidebar.write("Por favor, escribe una respuesta.")
-    
-    # Selector de canciones en la barra lateral
-    st.header("Selecciona una canción")
+            st.sidebar.write("Por favor, pongase serio y envie una opinion real.....")
+
+    st.header("elija una cancion (la mejor es la mas tierna pero no es tan tierna para se sincero)")
     cancion_seleccionada = st.selectbox("Elige una canción para escuchar:", list(CANCIONES.keys()))
     if cancion_seleccionada:
         st.audio(CANCIONES[cancion_seleccionada], format="audio/mp3")
 
-# Variable de estado para mostrar la pantalla inicial
 if "mostrar_seleccion" not in st.session_state:
     st.session_state.mostrar_seleccion = True
 
-# Pantalla de selección inicial
 if st.session_state.mostrar_seleccion:
     if st.button("Opción 1: Mapache 🦝"):
         st.session_state.mostrar_seleccion = False
-        imagen = obtener_imagen_aleatoria(CARPETAS["mapache"])
+        imagen = obtener_imagen(CARPETAS["mapache"])
         if imagen:
-            st.image(imagen, caption="¡Aquí tienes un mapache!")
+            st.image(imagen, caption="El mapache, animal que representa a los informaticos (por las ojeras)")
         else:
             st.write("No se encontraron imágenes en la carpeta 'mapache'.")
 
     elif st.button("Opción 2: Zorrito 🦊"):
         st.session_state.mostrar_seleccion = False
-        imagen = obtener_imagen_aleatoria(CARPETAS["zorrito"])
+        imagen = obtener_imagen(CARPETAS["zorrito"])
         if imagen:
-            st.image(imagen, caption="¡Aquí tienes un zorrito!")
+            st.image(imagen, caption="Zorrito, el zorro chilote tiene cara de que nada le importa")
         else:
             st.write("No se encontraron imágenes en la carpeta 'zorrito'.")
 
     elif st.button("Opción 3: Pandita Rojo 🐼🔴"):
         st.session_state.mostrar_seleccion = False
-        imagen = obtener_imagen_aleatoria(CARPETAS["pandita rojo"])
+        imagen = obtener_imagen(CARPETAS["pandita rojo"])
         if imagen:
-            st.image(imagen, caption="¡Aquí tienes un pandita rojo!")
+            st.image(imagen, caption="sabias que el maestro shifu era un panda rojo????")
         else:
             st.write("No se encontraron imágenes en la carpeta 'pandita rojo'.")
 
-# Botón para regresar a la selección inicial
 if not st.session_state.mostrar_seleccion:
-    if st.button("Regresar a la selección inicial"):
+    if st.button("volver"):
         st.session_state.mostrar_seleccion = True
 
