@@ -35,9 +35,12 @@ st.sidebar.title("Barra lateral")
 musica = st.sidebar.selectbox("Selecciona una canción:", list(canciones.keys()))
 comentario = st.sidebar.text_area("Escribe un comentario:")
 
-# Reproducir música seleccionada
-st.sidebar.write(f"Reproduciendo: {musica}")
-st.audio(canciones[musica])
+# Verifica si el archivo de audio existe antes de intentar reproducirlo
+if not os.path.exists(canciones[musica]):
+    st.error(f"El archivo de audio '{musica}' no se encontró en la ruta especificada.")
+else:
+    st.sidebar.write(f"Reproduciendo: {musica}")
+    st.audio(canciones[musica])
 
 # Mostrar comentario del usuario
 st.sidebar.write("Tu comentario:")
@@ -70,4 +73,5 @@ if st.session_state.opcion_seleccionada:
     # Botón para volver a elegir un animal
     if st.button("Volver"):
         reset_opcion()
+
 
