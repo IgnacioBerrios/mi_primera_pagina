@@ -3,12 +3,19 @@ import random
 import os
 from PIL import Image
 
-# Rutas
+# Rutas de imágenes y canciones
 RUTA_BASE = "tiernos"
 CARPETAS = {
     "mapache": os.path.join(RUTA_BASE, "mapache"),
     "zorrito": os.path.join(RUTA_BASE, "zorrito"),
     "pandita rojo": os.path.join(RUTA_BASE, "pandita rojo")
+}
+
+# Archivos de música
+CANCIONES = {
+    "Canción más tierna": "/mnt/data/cancion_mas_tierna.mp3",
+    "Canción Miku": "/mnt/data/cancion_Miku.mp3",
+    "Caramel Dancing": "/mnt/data/caramel_dancing.mp3"
 }
 
 # Función para obtener imagen aleatoria
@@ -31,6 +38,12 @@ with st.sidebar:
             st.sidebar.write("Gracias por tu respuesta!")
         else:
             st.sidebar.write("Por favor, escribe una respuesta.")
+    
+    # Selector de canciones en la barra lateral
+    st.header("Selecciona una canción")
+    cancion_seleccionada = st.selectbox("Elige una canción para escuchar:", list(CANCIONES.keys()))
+    if cancion_seleccionada:
+        st.audio(CANCIONES[cancion_seleccionada], format="audio/mp3")
 
 # Variable de estado para mostrar la pantalla inicial
 if "mostrar_seleccion" not in st.session_state:
@@ -66,3 +79,4 @@ if st.session_state.mostrar_seleccion:
 if not st.session_state.mostrar_seleccion:
     if st.button("Regresar a la selección inicial"):
         st.session_state.mostrar_seleccion = True
+
