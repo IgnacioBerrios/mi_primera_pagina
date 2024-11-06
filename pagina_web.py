@@ -3,6 +3,7 @@ import random
 import os
 from PIL import Image
 
+# Rutas
 RUTA_BASE = "tiernos"
 CARPETAS = {
     "mapache": os.path.join(RUTA_BASE, "mapache"),
@@ -10,6 +11,7 @@ CARPETAS = {
     "pandita rojo": os.path.join(RUTA_BASE, "pandita rojo")
 }
 
+# Función para obtener imagen aleatoria
 def obtener_imagen_aleatoria(ruta_carpeta):
     imagenes = os.listdir(ruta_carpeta)
     if imagenes:
@@ -17,25 +19,40 @@ def obtener_imagen_aleatoria(ruta_carpeta):
         return Image.open(os.path.join(ruta_carpeta, imagen_aleatoria))
     return None
 
-st.title("Para ti, que animal es mas lindo????")
+# Título
+st.title("¿Para ti, qué animal es más lindo?")
 
-if st.button("Opción 1: Mapache 🦝"):
-    imagen = obtener_imagen_aleatoria(CARPETAS["mapache"])
-    if imagen:
-        st.image(imagen, caption="¡Aquí tienes un mapache!")
-    else:
-        st.write("No se encontraron imágenes en la carpeta 'mapache'.")
+# Variable de estado para mostrar la pantalla inicial
+if "mostrar_seleccion" not in st.session_state:
+    st.session_state.mostrar_seleccion = True
 
-elif st.button("Opción 2: Zorrito"):
-    imagen = obtener_imagen_aleatoria(CARPETAS["zorrito 🦊"])
-    if imagen:
-        st.image(imagen, caption="¡Aquí tienes un zorrito!")
-    else:
-        st.write("No se encontraron imágenes en la carpeta 'zorrito'.")
+# Pantalla de selección inicial
+if st.session_state.mostrar_seleccion:
+    if st.button("Opción 1: Mapache 🦝"):
+        st.session_state.mostrar_seleccion = False
+        imagen = obtener_imagen_aleatoria(CARPETAS["mapache"])
+        if imagen:
+            st.image(imagen, caption="¡Aquí tienes un mapache!")
+        else:
+            st.write("No se encontraron imágenes en la carpeta 'mapache'.")
 
-elif st.button("Opción 3: Pandita Rojo"):
-    imagen = obtener_imagen_aleatoria(CARPETAS["pandita rojo 🐼🔴"])
-    if imagen:
-        st.image(imagen, caption="¡Aquí tienes un pandita rojo!")
-    else:
-        st.write("No se encontraron imágenes en la carpeta 'pandita rojo'.")
+    elif st.button("Opción 2: Zorrito 🦊"):
+        st.session_state.mostrar_seleccion = False
+        imagen = obtener_imagen_aleatoria(CARPETAS["zorrito"])
+        if imagen:
+            st.image(imagen, caption="¡Aquí tienes un zorrito!")
+        else:
+            st.write("No se encontraron imágenes en la carpeta 'zorrito'.")
+
+    elif st.button("Opción 3: Pandita Rojo 🐼🔴"):
+        st.session_state.mostrar_seleccion = False
+        imagen = obtener_imagen_aleatoria(CARPETAS["pandita rojo"])
+        if imagen:
+            st.image(imagen, caption="¡Aquí tienes un pandita rojo!")
+        else:
+            st.write("No se encontraron imágenes en la carpeta 'pandita rojo'.")
+
+# Botón para regresar a la selección inicial
+if not st.session_state.mostrar_seleccion:
+    if st.button("Regresar a la selección inicial"):
+        st.session_state.mostrar_seleccion = True
