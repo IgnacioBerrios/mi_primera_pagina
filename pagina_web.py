@@ -10,7 +10,6 @@ CARPETAS = {
     "pandita rojo": os.path.join(RUTA_BASE, "pandita rojo")
 }
 
-# Ubicación de las canciones
 CARPETA_CANCIONES = "Song_so_cute"
 canciones = {
     "Canción 1": os.path.join(CARPETA_CANCIONES, "cancion_Miku.mp3"),
