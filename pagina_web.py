@@ -26,7 +26,7 @@ def obtener_imagen(ruta_carpeta):
 #barrita para decorar y saber tu opinion apesar de que no ira a ningun lugar y todo morira
 st.title("Para ti, qué animal es más lindo?")
 with st.sidebar:
-    st.header("Comparte tu opinión")
+    st.header("Tu que cre'")
     respuesta = st.text_input("Cuál de estos animales te parece el más lindo y por qué? explayece")
     if st.button("Enviar"):
         if respuesta:
@@ -34,7 +34,7 @@ with st.sidebar:
         else:
             st.sidebar.write("Por favor, pongase serio y envie una opinion real.....")
 
-    if st.button("click aqui ⬇️⬇️"):
+    if st.button("click aqui ⬇️⬇️"):                #pa trolear
         if respuesta:
             st.sidebar.write("Gracias por clicklar 👍👍")
 
