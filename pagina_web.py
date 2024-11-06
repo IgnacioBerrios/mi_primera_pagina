@@ -55,7 +55,7 @@ if st.session_state.mostrar_seleccion:
         st.session_state.mostrar_seleccion = False
         imagen = obtener_imagen(CARPETAS["zorrito"])
         if imagen:
-            st.image(imagen, caption="Zorrito, el zorro chilote tiene cara de que nada le importa")
+            st.image(imagen, caption="Zorrito, el zorro chilote tiene cara de que nada le importa(no hay fotos de zorros chilote en la base de datos)")
         else:
             st.write("No se encontraron imágenes en la carpeta 'zorrito'.")
     elif st.button("Opción 3: Pandita Rojo 🐼🔴"):
