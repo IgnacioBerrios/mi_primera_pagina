@@ -4,7 +4,7 @@ import os
 from PIL import Image
 
 # Rutas base para imágenes y canciones
-RUTA_BASE = "/workspaces/mi_primera_pagina/tiernos"
+RUTA_BASE = "tiernos"
 CARPETAS = {
     "mapache": os.path.join(RUTA_BASE, "mapache"),
     "zorrito": os.path.join(RUTA_BASE, "zorrito"),
@@ -12,7 +12,7 @@ CARPETAS = {
 }
 
 # Ubicación de las canciones
-CARPETA_CANCIONES = "/workspaces/mi_primera_pagina/Songs_so_cute"
+CARPETA_CANCIONES = "Songs_so_cute"
 canciones = {
     "Canción 1": os.path.join(CARPETA_CANCIONES, "cancion_Miku.mp3"),
     "Canción 2": os.path.join(CARPETA_CANCIONES, "caramel_dancing.mp3"),
