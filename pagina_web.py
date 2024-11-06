@@ -32,7 +32,7 @@ musica = st.sidebar.selectbox("Selecciona una canción:", list(CANCIONES.keys())
 comentario = st.sidebar.text_area("Escribe un comentario:")
 
 st.sidebar.write(f"Reproduciendo: {musica}")
-st.audio(CANCIONES[musica])
+st.audio(canciones[musica])
 
 st.sidebar.write("Tu comentario:")
 st.sidebar.write(comentario)
