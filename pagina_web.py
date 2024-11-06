@@ -3,18 +3,18 @@ import random
 import os
 from PIL import Image
 
-RUTA_BASE = "tiernos"
+RUTA_BASE = "/workspaces/mi_primera_pagina/tiernos"
 CARPETAS = {
-    "mapache": os.path.join(RUTA_BASE, "mapache"),
-    "zorrito": os.path.join(RUTA_BASE, "zorrito"),
-    "pandita rojo": os.path.join(RUTA_BASE, "pandita rojo")
+    "mapache": os.path.join(RUTA_BASE, "/workspaces/mi_primera_pagina/tiernos/mapache"),
+    "zorrito": os.path.join(RUTA_BASE, "/workspaces/mi_primera_pagina/tiernos/zorrito"),
+    "pandita rojo": os.path.join(RUTA_BASE, "/workspaces/mi_primera_pagina/tiernos/pandita rojo")
 }
 
-CARPETA_CANCIONES = "Song_so_cute"
+CARPETA_CANCIONES = "/workspaces/mi_primera_pagina/Songs_so_cute"
 canciones = {
-    "Canción 1": os.path.join(CARPETA_CANCIONES, "cancion_Miku.mp3"),
-    "Canción 2": os.path.join(CARPETA_CANCIONES, "caramel_dancing.mp3"),
-    "Canción 3": os.path.join(CARPETA_CANCIONES, "cancion_mas_tierna.mp3")
+    "Canción 1": os.path.join(CARPETA_CANCIONES, "/workspaces/mi_primera_pagina/Songs_so_cute/cancion_Miku.mp3"),
+    "Canción 2": os.path.join(CARPETA_CANCIONES, "/workspaces/mi_primera_pagina/Songs_so_cute/caramel_dancing.mp3"),
+    "Canción 3": os.path.join(CARPETA_CANCIONES, "/workspaces/mi_primera_pagina/Songs_so_cute/cancion_mas_tierna.mp3")
 }
 
 def obtener_imagen_aleatoria(ruta_carpeta):
