@@ -16,36 +16,6 @@ def obtener_imagen_aleatoria(ruta_carpeta):
         imagen_aleatoria = random.choice(imagenes)
         return Image.open(os.path.join(ruta_carpeta, imagen_aleatoria))
     return None
-    
-st.markdown("""
-    <style>
-    /* Fondo beige */
-    .stApp {
-        background-color: #f5f5dc;
-    }
-    /* Estilo de los botones */
-    div.stButton > button {
-        color: white;
-        background-color: #4CAF50;
-        border: none;
-        padding: 10px 24px;
-        font-size: 16px;
-        margin: 4px 2px;
-        border-radius: 8px;
-        cursor: pointer;
-    }
-    /* Efecto hover en botones */
-    div.stButton > button:hover {
-        background-color: #45a049;
-    }
-    /* Centrar el contenido */
-    .stApp .main .block-container {
-        max-width: 700px;
-        margin: auto;
-        padding-top: 30px;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
 st.title("Para ti, que animal es mas lindo????")
 
